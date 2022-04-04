@@ -1,12 +1,15 @@
 import express from 'express';
 
+const PORT = 5000;
+
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
+    console.log('you hit me');
     res.send('Hit that');
 });
 
-app.listen(5000, () => console.log('Server is running'));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
